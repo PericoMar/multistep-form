@@ -17,6 +17,8 @@ El formulario se divide en varios pasos, cada uno con un conjunto específico de
 2. **Paso 2: Información de Contacto**
     - Email
     - Contraseña (con confirmación y medición de fuerza)
+    En la siguiente función podemos ver como la fuerza de la contraseña depende del uso de mayusculas, de que sea de más de 8 caracteres, de uso de numeros y caracteres especiales.
+    Una vez calculada la fuerza de la contraseña se actualiza la barra de medición de fuerza.
     ```
     function calculatePasswordStrength(password) {
         let strength = 0;
@@ -120,6 +122,10 @@ Cuando se completa el formulario se muestra un modal con la información del cam
             thanksModule.showModal();
         });
     });
+```
+Como podemos ver en el codigo anterior antes de mostrar el modal hacemos la petición a la API [exchangerate-api](https://www.exchangerate-api.com/) para conocer cuanto es el cambio:
+```
+    fetch(`https://v6.exchangerate-api.com/v6/${API_KEY_CURRENCY}/latest/${baseCurrency}`)
 ```
 
 ### Funcionalidades Adicionales
